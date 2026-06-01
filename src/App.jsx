@@ -1,19 +1,18 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Perfil from './pages/perfil';
-
+import { Routes, Route } from 'react-router-dom'
+import Layout from './layouts/Layout'
+import Dashboard from './pages/Dashboard'
+import Perfil from './pages/Perfil'
 import './App.css'
 
 function App() {
 
- return (
-    <BrowserRouter>
-      <Routes>
-        <Route >
-          <Route path="perfil/:id" element={<perfil />} />
-          
-        </Route>
-      </Routes>
-    </BrowserRouter>
+   return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="perfil" element={<Perfil />} />
+      </Route>
+    </Routes>
   )
 }
 
