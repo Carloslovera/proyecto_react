@@ -12,11 +12,11 @@ function Sidebar() {
     <aside className="sidebar">
       {/* Logo del grupo */}
       <div className="sidebar__logo">
-        <span className="sidebar__logo-icon">🚀</span>
+        <span className="sidebar__logo-icon"></span>
         <span className="sidebar__logo-text">Proyecto React</span>
       </div>
 
-      {/* Links de navegación */}
+      {/* Links de navegacion */}
       <nav className="sidebar__nav">
         <ul className="sidebar__nav-list">
           {navLinks.map(({ to, label, icon }) => (
@@ -36,7 +36,7 @@ function Sidebar() {
         </ul>
       </nav>
 
-      {/* Footer de la sidebar */}
+      {/* Footer del sidebar */}
       <div className="sidebar__footer">
         <p>Grupo ©{new Date().getFullYear()}</p>
       </div>
