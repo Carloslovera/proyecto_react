@@ -1,10 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-
 import Layout from "./layouts/Layout";
-
 import Dashboard from "./pages/Dashboard";
 import Perfil from "./pages/Perfil";
-
 import GalleryPage from "./pages/GalleryPage";
 import BitacoraPage from "./pages/BitacoraPage";
 import RenderTreePage from "./pages/RenderTreePage";
