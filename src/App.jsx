@@ -1,8 +1,13 @@
-import { Routes, Route } from 'react-router-dom'
-import Layout from './layouts/Layout'
-import Dashboard from './pages/Dashboard'
-import Perfil from './pages/Perfil'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+
+import Layout from "./layouts/Layout";
+
+import Dashboard from "./pages/Dashboard";
+import Perfil from "./pages/Perfil";
+
+import GalleryPage from "./pages/GalleryPage";
+import BitacoraPage from "./pages/BitacoraPage";
+import RenderTreePage from "./pages/RenderTreePage";
 
 function App() {
   return (
@@ -10,9 +15,12 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Dashboard />} />
         <Route path="perfil" element={<Perfil />} />
+        <Route path="galeria" element={<GalleryPage />} />
+        <Route path="bitacora" element={<BitacoraPage />} />
+        <Route path="arbol-componentes" element={<RenderTreePage />} />
       </Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
