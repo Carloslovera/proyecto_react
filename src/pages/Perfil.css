@@ -91,3 +91,10 @@
     filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8));
   }
 }
+
+.perfil-card__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
