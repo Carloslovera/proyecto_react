@@ -1,0 +1,19 @@
+ {
+    "id": 1,
+    "name": "Martín",
+    "role": "Backend Developer",
+    "description": "Especialista en Node.js y arquitectura de sistemas.",
+    "avatar": "/img/avatar-martin.png",
+    "github": "https://github.com/Marto85",
+    "linkedin": "https://www.linkedin.com/in/martojuandev/?locale=es",
+    "codes": ["node", "architecture", "javascript"],
+    "skills": [
+      { "name": "Node.js", "level": "90%" },
+      { "name": "Arquitectura", "level": "85%" }
+    ],
+    "projects": [
+      { "title": "API E-commerce", "desc": "Backend escalable en Node." },
+      { "title": "Auth System", "desc": "Sistema de login con JWT." },
+      { "title": "Chatbot REST", "desc": "Integración con IA." }
+    ]
+  }
