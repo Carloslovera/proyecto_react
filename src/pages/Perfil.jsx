@@ -6,7 +6,7 @@ function Perfil() {
   return (
     <div className="perfil">
       <h1 className="perfil__titulo">
-        Perfiles
+        Perfile
       </h1>
 
       <div className="perfil__grid">
