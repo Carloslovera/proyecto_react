@@ -10,10 +10,9 @@
   height: 100vh;
   overflow-y: auto;
   transition: width 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
-/* Scrollbar estilo tech */
+/* Scrollbar */
 .sidebar::-webkit-scrollbar {
   width: 4px;
 }
@@ -23,7 +22,7 @@
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-  background: #00ff9d;
+  background: #ff2d55;
   border-radius: 4px;
 }
 
@@ -44,29 +43,30 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, #00ff9d, #00d4ff, transparent);
+  background: linear-gradient(90deg, #ff2d55, #ff7b00, transparent);
 }
 
 .sidebar__logo-icon {
   font-size: 1.75rem;
-  filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.5));
-  animation: logoGlow 2s ease-in-out infinite;
-}
-
-@keyframes logoGlow {
-  0%, 100% { filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.5)); }
-  50% { filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.8)); }
 }
 
 .sidebar__logo-text {
-  font-size: 1rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #ffffff, #00d4ff);
+  font-size: 1.1rem;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffffff 40%, #ff2d55 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  white-space: nowrap;
-  letter-spacing: -0.5px;
+  padding-bottom: 2px;
+}
+
+/* Acento en la palabra resaltada del logo */
+.sidebar__logo-text span {
+  color: #ff2d55;
 }
 
 /* Nav */
@@ -96,11 +96,13 @@
   color: #8a8f9e;
   font-size: 0.85rem;
   font-weight: 500;
+  font-family: "Inter", sans-serif;
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
 }
 
+/* Línea de acento izquierda */
 .sidebar__nav-link::before {
   content: '';
   position: absolute;
@@ -109,13 +111,13 @@
   transform: translateY(-50%);
   width: 3px;
   height: 0;
-  background: linear-gradient(180deg, #00ff9d, #00d4ff);
+  background: linear-gradient(180deg, #ff2d55, #ff7b00);
   border-radius: 0 3px 3px 0;
   transition: height 0.2s ease;
 }
 
 .sidebar__nav-link:hover {
-  background: rgba(0, 255, 157, 0.08);
+  background: rgba(255, 45, 85, 0.08);
   color: #ffffff;
   transform: translateX(4px);
 }
@@ -125,17 +127,13 @@
 }
 
 .sidebar__nav-link--active {
-  background: rgba(0, 255, 157, 0.12);
-  color: #00ff9d;
-  border: 1px solid rgba(0, 255, 157, 0.2);
+  background: rgba(255, 45, 85, 0.12);
+  color: #ff2d55;
+  border: 1px solid rgba(255, 45, 85, 0.25);
 }
 
 .sidebar__nav-link--active::before {
   height: 60%;
-}
-
-.sidebar__nav-link--active .sidebar__nav-icon {
-  filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.5));
 }
 
 .sidebar__nav-icon {
@@ -146,7 +144,6 @@
 
 .sidebar__nav-link:hover .sidebar__nav-icon {
   transform: scale(1.1);
-  filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
 }
 
 /* Footer */
@@ -156,7 +153,7 @@
   font-size: 0.7rem;
   color: #4a4f5e;
   text-align: center;
-  font-family: monospace;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0.5px;
   position: relative;
 }
@@ -168,10 +165,10 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #00ff9d, #00d4ff, transparent);
+  background: linear-gradient(90deg, transparent, #ff2d55, #ff7b00, transparent);
 }
 
-/* Estado colapsado (opcional) */
+/* Estado colapsado */
 .sidebar--collapsed {
   width: 80px;
 }

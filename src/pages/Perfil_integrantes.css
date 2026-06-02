@@ -1,0 +1,237 @@
+.perfil-detalle {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* BOTÓN VOLVER */
+
+.btn-volver {
+  border: none;
+  background-color: #ff2d55;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 2rem;
+  transition: 0.2s;
+}
+
+.btn-volver:hover {
+  transform: translateY(-2px);
+  background-color: #ff7b00;
+}
+
+/* HEADER */
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.perfil-avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ff2d55;
+}
+
+.perfil-info h1 {
+  color: #1f2937;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.perfil-info h3 {
+  color: #ff2d55;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.perfil-info p {
+  color: #4b5563;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* TITULOS DE SECCIÓN */
+
+.seccion-titulo {
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.seccion-titulo::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ff2d55;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+}
+
+/* HABILIDADES */
+
+.skill {
+  margin-bottom: 1rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.skill-name {
+  color: #1f2937;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+
+.skill-level {
+  color: #666666;
+}
+
+.skill progress {
+  width: 100%;
+  height: 10px;
+}
+
+/* STACK TECNOLÓGICO */
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 2px solid #ff2d55;
+  border-radius: 999px;
+  background: #fff;
+  color: #1f2937;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  width: fit-content;
+  transition: 0.2s ease;
+}
+
+.tech-badge:hover {
+  background: #ff2d55;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tech-icon {
+  font-size: 18px;
+  color: #ff7b00;
+}
+
+/* PROYECTOS */
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel-card {
+  flex: 1;
+  background: white;
+  border-radius: 24px; /* era 18px */
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.078); /* unificado */
+}
+
+.carousel-card h3 {
+  color: #ff2d55; /* era #1f2937, ahora igual que h2 de cards */
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.carousel-card p {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.carousel button {
+  border: none;
+  background-color: #ff2d55;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.carousel button:hover {
+  background-color: #ff7b00;
+}
+
+/* REDES */
+
+.redes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.redes a {
+  text-decoration: none;
+  background-color: #ff2d55;
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  transition: 0.2s;
+}
+
+.redes a:hover {
+  background-color: #ff7b00;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .perfil-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .perfil-avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .perfil-info h1 {
+    font-size: 2rem;
+  }
+
+  .carousel {
+    flex-direction: column;
+  }
+}
