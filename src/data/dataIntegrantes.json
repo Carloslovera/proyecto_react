@@ -1,19 +1,106 @@
- {
-    "id": 1,
-    "name": "Martín",
-    "role": "Backend Developer",
-    "description": "Especialista en Node.js y arquitectura de sistemas.",
-    "avatar": "/img/avatar-martin.png",
-    "github": "https://github.com/Marto85",
-    "linkedin": "https://www.linkedin.com/in/martojuandev/?locale=es",
-    "codes": ["node", "architecture", "javascript"],
-    "skills": [
-      { "name": "Node.js", "level": "90%" },
-      { "name": "Arquitectura", "level": "85%" }
-    ],
-    "projects": [
-      { "title": "API E-commerce", "desc": "Backend escalable en Node." },
-      { "title": "Auth System", "desc": "Sistema de login con JWT." },
-      { "title": "Chatbot REST", "desc": "Integración con IA." }
-    ]
-  }
+[
+    {
+        "id": 1,
+        "nombre": "Carlos",
+        "rol": "Software Developer",
+        "description": "Especialista en Astro y arquitectura de sistemas.",
+        "avatar": "/img/carlos.png",
+        "github": "https://github.com/Carloslovera",
+        "linkedin": "https://www.linkedin.com/in/carlosrauldev/overlay/contact-info/#:~:text=linkedin.com/in/carlosrauldev",
+        "techStack": [
+                    "Astro",
+                    "React",
+                    "Java",
+                    "PostgreSQL",
+                    "Git"],
+        "skills": [
+        { "name": "css", "level": "90%" },
+        { "name": "Java", "level": "85%" },
+        { "name": "Astro", "level": "85%" }
+        ],
+        "projects": [
+        {"title": "Blog con Astro", "desc": "Sitio de contenido estático construido con Astro y React, optimizado para SEO y con estilos 100% en CSS puro."},
+        {"title": "Auth System", "desc": "API REST en Java con Spring Boot, autenticación JWT y base de datos PostgreSQL."},
+        {"title": "Dashboard de Métricas", "desc": "Aplicación full-stack con frontend en React y backend en Java conectado a PostgreSQL para visualizar datos en tiempo real."}
+        ]
+    },
+
+    {
+        "id": 2,
+        "nombre": "Karina",
+        "rol": "Full Stack Developer",
+        "description": "Especialista en backend",
+        "avatar": "/img/karina.jpeg",
+        "github": "https://github.com/kariajh",
+        "linkedin": "linkedin.com/in/karina-ajhuacho-144a36322",
+        "techStack": [
+                    "HTML",
+                    "CSS",
+                    "CSharp",
+                    "PostgreSQL",
+                    "Git"],
+        "skills": [
+        { "name": "HTML", "level": "80%" },
+        { "name": "javascript", "level": "75%" },
+        { "name": "PostgreSQL", "level": "85%" }
+        ],
+        "projects": [
+        { "title": "Sistema de Gestion de Club Deportivo ", "desc": "Proyecto realizado en clase con C#." },
+        { "title": "Sistema de Gestion para obras", "desc": "Sistema modular con arquitectura modular." },
+        { "title": "API REST de Inventario", "desc": "Servicio backend en C# con endpoints CRUD y autenticación básica." }
+        ]
+    },
+
+    {
+        "id": 3,
+        "nombre": "Maxi",
+        "rol": "Desarrollador Arduino",
+        "description": "Profesor de computación en Tucumán y estudiante de la Tecnicatura Superior en Desarrollo de Software a Distancia en el IFTS N° 29. Apasionado por la tecnología, la educación y la robótica.",
+        "avatar": "/img/maxi.png",
+        "github": "https://github.com/Carloslovera",
+        "linkedin": "https://www.linkedin.com/in/carlos-a-lovera-r-bb5237252/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaVa52YYxTNirLxN99hCuPg%3D%3D",
+        "techStack": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Arduino",
+                    "Git"],
+        "skills": [
+        { "name": "HTML", "level": "90%" },
+        { "name": "Arduino", "level": "85%" },
+        { "name": "css", "level": "75%" }
+        ],
+        "projects": [
+        { "title": "Panel de Control IoT", "desc": "Dashboard web para monitorear sensores Arduino en tiempo real." },
+        { "title": "Robótica Didáctica", "desc": "Kit de ejercicios con Arduino para enseñar programación a estudiantes." },
+        { "title": "Portafolio Docente", "desc": "Sitio estático con recursos y apuntes para alumnos de computación." }
+        ]
+    },
+
+    {
+        "id": 4,
+        "nombre": "Ivanna",
+        "rol": "Web Developer",
+        "description": "Soy una estudiante de la carrera de Desarrollador de Software, apasionada por el rubro y que está emocionada por dar sus primeros pasos dentro del rubro de IT",
+        "avatar": "/img/ivanna.png",
+        "github": "https://github.com/Carloslovera",
+        "linkedin": "https://www.linkedin.com/in/carlos-a-lovera-r-bb5237252/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BaVa52YYxTNirLxN99hCuPg%3D%3D",
+        "techStack": [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Angular",
+                    "Git"],
+       
+        "skills": [
+        { "name": "html", "level": "90%" },
+        { "name": "css", "level": "75%" },
+        { "name": "Angular", "level": "85%" }
+        ],
+        "projects": [
+        { "title": "Hometown Project", "desc": "El proyecto en solitario final realizado para el curso de HTML y CSS básico de Scrimba." },
+        { "title": "Password Generator", "desc": "Consiste en utilizar lo aprendido para crear un generador aleatorio de contraseñas, pudiendo modificarse la cantidad de caracteres al igual que puede traspasarse al portapapeles con solo hacer click sobre la contraseña deseada." },
+        { "title": "Portfolio Virtual", "desc": "Página personal completa que sirva como Portafolio y que pueda utilizarse dinámicamente." }
+        ]
+    }
+]
