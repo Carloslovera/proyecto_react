@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   background-color: #ffffff;
+  box-sizing: border-box;
 }
 
 /* BOTÓN VOLVER */
@@ -15,13 +16,14 @@
   border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
+  font-family: "Inter", sans-serif;
   margin-bottom: 2rem;
   transition: 0.2s;
 }
 
 .btn-volver:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  background-color: #ff7b00;
 }
 
 /* HEADER */
@@ -44,23 +46,36 @@
 .perfil-info h1 {
   color: #1f2937;
   font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
 .perfil-info h3 {
   color: #ff2d55;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
   margin-bottom: 1rem;
 }
 
 .perfil-info p {
-  color: #666666;
-  line-height: 1.6;
+  color: #4b5563;
+  line-height: 1.8;
+  font-style: italic;
 }
 
 /* TITULOS DE SECCIÓN */
 
 .seccion-titulo {
   color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
   margin-top: 3rem;
   margin-bottom: 1rem;
   position: relative;
@@ -90,7 +105,8 @@
 
 .skill-name {
   color: #1f2937;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
 }
 
 .skill-level {
@@ -102,23 +118,20 @@
   height: 10px;
 }
 
-/*STACK TECNOLOGICO*/
+/* STACK TECNOLÓGICO */
+
 .tech-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   padding: 10px 16px;
-
   border: 2px solid #ff2d55;
   border-radius: 999px;
-
   background: #fff;
   color: #1f2937;
-
   font-weight: 600;
+  font-family: "Inter", sans-serif;
   width: fit-content;
-
   transition: 0.2s ease;
 }
 
@@ -144,19 +157,22 @@
 .carousel-card {
   flex: 1;
   background: white;
-  border: 2px solid #ff2d55;
-  border-radius: 18px;
+  border-radius: 24px; /* era 18px */
   padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.078); /* unificado */
 }
 
 .carousel-card h3 {
-  color: #1f2937;
+  color: #ff2d55; /* era #1f2937, ahora igual que h2 de cards */
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
   margin-bottom: 0.8rem;
 }
 
 .carousel-card p {
-  color: #666666;
+  color: #4b5563;
+  line-height: 1.8;
 }
 
 .carousel button {
@@ -190,6 +206,7 @@
   padding: 0.8rem 1rem;
   border-radius: 12px;
   font-weight: 600;
+  font-family: "Inter", sans-serif;
   transition: 0.2s;
 }
 
@@ -200,7 +217,6 @@
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
-
   .perfil-header {
     flex-direction: column;
     text-align: center;

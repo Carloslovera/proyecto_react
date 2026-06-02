@@ -1,7 +1,10 @@
-import { Routes, Route } from 'react-router-dom'
-import Layout from './layouts/Layout'
-import Dashboard from './pages/Dashboard'
-import Perfil from './pages/Perfil'
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import Dashboard from "./pages/Dashboard";
+import Perfil from "./pages/Perfil";
+import GalleryPage from "./pages/GalleryPage";
+import BitacoraPage from "./pages/BitacoraPage";
+import RenderTreePage from "./pages/RenderTreePage";
 import PerfilIntegrante from './pages/Perfil_Integrantes'
 import './App.css'
 
@@ -13,9 +16,12 @@ function App() {
         <Route index element={<Dashboard />} />
         <Route path="perfil" element={<Perfil />} />
         <Route path="perfil/:id" element={<PerfilIntegrante />} />
+        <Route path="galeria" element={<GalleryPage />} />
+        <Route path="bitacora" element={<BitacoraPage />} />
+        <Route path="arbol-componentes" element={<RenderTreePage />} />
       </Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

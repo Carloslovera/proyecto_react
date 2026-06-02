@@ -1,11 +1,14 @@
-import { NavLink } from 'react-router-dom'
-import './Sidebar.css'
+import { NavLink } from "react-router-dom";
+import "./Sidebar.css";
 
 const navLinks = [
-  { to: '/', label: 'Dashboard', icon: '🏠' },
-  { to: '/perfil', label: 'Perfil', icon: '👤' },
-  { to: '/configuracion', label: 'Configuración', icon: '⚙️' },
-]
+  { to: "/", label: "Dashboard", icon: "🏠" },
+  { to: "/perfil", label: "Perfil", icon: "👤" },
+  { to: "/galeria", label: "Galería", icon: "🖼️" },
+  { to: "/bitacora", label: "Bitácora", icon: "📋" },
+  { to: "/arbol-componentes", label: "Árbol de Componentes", icon: "🌳" },
+  { to: "/configuracion", label: "Configuración", icon: "⚙️" },
+];
 
 function Sidebar() {
   return (
@@ -25,7 +28,7 @@ function Sidebar() {
                 to={to}
                 end
                 className={({ isActive }) =>
-                  `sidebar__nav-link ${isActive ? 'sidebar__nav-link--active' : ''}`
+                  `sidebar__nav-link ${isActive ? "sidebar__nav-link--active" : ""}`
                 }
               >
                 <span className="sidebar__nav-icon">{icon}</span>
@@ -41,7 +44,7 @@ function Sidebar() {
         <p>Grupo ©{new Date().getFullYear()}</p>
       </div>
     </aside>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

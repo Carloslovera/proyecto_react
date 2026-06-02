@@ -1,0 +1,124 @@
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 999px;
+    background:
+        linear-gradient(to bottom,
+            #ff2d55,
+            #ff7b00);
+}
+
+.timeline-card {
+    position: relative;
+    margin-left: 3.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, .08);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 16px 32px rgba(0, 0, 0, .12);
+}
+
+.timeline-card::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ff2d55;
+    border: 4px solid white;
+    left: -43px;
+    top: 25px;
+}
+
+.timeline-top {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+.timeline-date {
+    color: #ff2d55;
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.timeline-stage {
+    padding: .4rem .8rem;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.pedido {
+    background: #ffe8ef;
+    color: #ff2d55;
+}
+
+.cocina {
+    background: #fff4d9;
+    color: #f59e0b;
+}
+
+.reparto {
+    background: #dff5ff;
+    color: #0284c7;
+}
+
+.entrega {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.timeline-card h3 {
+    margin: 1rem 0 .75rem;
+    color: #1f2937;
+}
+
+.timeline-card p {
+    color: #6b7280;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-card {
+        margin-left: 2rem;
+        padding: 1rem;
+    }
+
+    .timeline-card::before {
+        left: -25px;
+    }
+
+    .timeline-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}

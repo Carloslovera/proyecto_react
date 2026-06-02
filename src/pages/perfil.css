@@ -1,95 +1,79 @@
+.perfil {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
 .perfil__titulo {
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  letter-spacing: -0.5px;
-  border-left: 3px solid #ff2d55;
-  padding-left: 1rem;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #ffffff, #00d4ff);
-  -webkit-background-clip: text;
-  background-clip: text;
   color: #1f2937;
-  background: none;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  text-align: left;
 }
 
 .perfil__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
   gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Necesario para animar el ángulo del conic-gradient */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-border {
+  to { --angle: 360deg; }
 }
 
 .perfil-card {
-  background: #ffffff;
-  backdrop-filter: blur(10px);
-  border: 2px solid #ff2d55;
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 1.5rem;
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  background: transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  isolation: isolate; /* contiene el z-index de los pseudo-elementos */
 }
 
+/* Gradiente giratorio que forma el borde */
 .perfil-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00ff9d, #00d4ff, transparent);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  inset: -2px;
+  border-radius: 26px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 70%,
+    #ff2d55 85%,
+    #ff7b00 95%,
+    transparent 100%
+  );
+  z-index: -2;
+  animation: spin-border 3s linear infinite;
 }
 
-.perfil-card:hover::before {
-  transform: scaleX(1);
+/* Fondo oscuro de la card (tapa el gradiente por dentro) */
+.perfil-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: #12131a;
+  z-index: -1;
 }
 
 .perfil-card:hover {
   transform: translateY(-6px);
-  border-color: #00ff9d;
-  box-shadow: 0 8px 28px rgba(0, 255, 157, 0.15);
-}
-
-.perfil-card__emoji {
-  font-size: 3rem;
-  display: block;
-  margin-bottom: 0.75rem;
-  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
-  animation: glow 2s ease-in-out infinite;
-}
-
-.perfil-card__nombre {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  background: linear-gradient(135deg, #ffffff, #00d4ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.perfil-card__rol {
-  font-size: 0.8rem;
-  color: #00d4ff;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-/* Animación de glow para el emoji */
-@keyframes glow {
-  0%, 100% {
-    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
-  }
-  50% {
-    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8));
-  }
+  box-shadow: 0 16px 40px rgba(255, 45, 85, 0.25);
 }
 
 .perfil-card__img {
@@ -97,4 +81,23 @@
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  margin-bottom: 0.75rem;
+  border: 2px solid #ff2d55;
+}
+
+.perfil-card__nombre {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 0.25rem;
+}
+
+.perfil-card__rol {
+  font-size: 0.8rem;
+  color: #ff2d55;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
 }
