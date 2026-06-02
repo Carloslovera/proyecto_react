@@ -6,7 +6,7 @@ import GalleryPage from "./pages/GalleryPage";
 import BitacoraPage from "./pages/BitacoraPage";
 import RenderTreePage from "./pages/RenderTreePage";
 import PerfilIntegrante from './pages/Perfil_Integrantes'
-import './App.css'
+
 
 function App() {
 
