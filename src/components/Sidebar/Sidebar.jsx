@@ -6,6 +6,8 @@ const navLinks = [
   { to: "/perfil", label: "Perfil", icon: "👤" },
   { to: "/galeria", label: "Galería", icon: "🖼️" },
   { to: "/bitacora", label: "Bitácora", icon: "📋" },
+  { to: "/json-explorer", label: "Explorador JSON", icon: "📄" },
+  { to: "/api-externa", label: "API Externa", icon: "🌐" },
   { to: "/arbol-componentes", label: "Árbol de Componentes", icon: "🌳" },
   { to: "/configuracion", label: "Configuración", icon: "⚙️" },
 ];
