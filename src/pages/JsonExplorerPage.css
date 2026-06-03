@@ -39,3 +39,9 @@
   color: white;
   margin: 5px 0;
 }
+
+@media (max-width: 768px) {
+  .empleados-grid {
+    grid-template-columns: 1fr;
+  }
+}
