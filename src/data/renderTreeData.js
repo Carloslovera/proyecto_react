@@ -4,53 +4,83 @@ const renderTreeData = {
 
   children: [
     {
-      name: "Layout",
+      name: "Layout Principal",
       icon: "🏗",
 
       children: [
         {
-          name: "Sidebar",
+          name: "Barra Lateral",
           icon: "🧭",
         },
         {
-          name: "Outlet",
+          name: "Contenedor de Páginas",
           icon: "📄",
         },
       ],
     },
 
     {
-      name: "DashboardPage",
+      name: "Página Dashboard",
       icon: "📊",
 
       children: [
         {
-          name: "Hero Section",
-          icon: "🃏",
+          name: "Panel Principal",
+          icon: "🏠",
+
+          children: [
+            {
+              name: "Sección de Bienvenida",
+              icon: "✨",
+            },
+          ],
         },
       ],
     },
 
     {
-      name: "GalleryPage",
-      icon: "🖼",
+      name: "Página Perfil",
+      icon: "👥",
 
       children: [
         {
-          name: "Gallery",
+          name: "Perfiles de Integrantes",
+          icon: "👤",
+
+          children: [
+            {
+              name: "Tarjetas de Perfil",
+              icon: "🃏",
+            },
+            {
+              name: "Imágenes de Avatar",
+              icon: "📸",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      name: "Página Galería",
+      icon: "🖼️",
+
+      children: [
+        {
+          name: "Galería de Imágenes",
           icon: "📷",
 
           children: [
             {
-              name: "Gallery Cards",
+              name: "Tarjetas de Imagen",
               icon: "🃏",
             },
             {
-              name: "Lightbox",
+              name: "Visor Ampliado",
               icon: "🔍",
             },
             {
-              name: "Navigation Buttons",
+              name: "Controles de Navegación",
               icon: "🔘",
             },
           ],
@@ -59,18 +89,18 @@ const renderTreeData = {
     },
 
     {
-      name: "BitacoraPage",
+      name: "Página Bitácora",
       icon: "📋",
 
       children: [
         {
-          name: "Timeline",
+          name: "Línea de Tiempo",
           icon: "🛵",
 
           children: [
             {
-              name: "Timeline Cards",
-              icon: "🃏",
+              name: "Entradas de Bitácora",
+              icon: "🧾",
             },
           ],
         },
@@ -78,17 +108,17 @@ const renderTreeData = {
     },
 
     {
-      name: "RenderTreePage",
+      name: "Página Árbol de Renderizado",
       icon: "🌳",
 
       children: [
         {
-          name: "RenderTree",
+          name: "Visualización del Árbol",
           icon: "🌲",
 
           children: [
             {
-              name: "TreeNode",
+              name: "Nodos de Componentes",
               icon: "🌿",
             },
           ],
@@ -97,17 +127,59 @@ const renderTreeData = {
     },
 
     {
-      name: "PerfilPage",
-      icon: "👥",
+      name: "Página API",
+      icon: "🔌",
 
       children: [
         {
-          name: "Profile Cards",
-          icon: "🃏",
+          name: "Consulta de Datos",
+          icon: "📡",
+
+          children: [
+            {
+              name: "Solicitud de Información",
+              icon: "📥",
+            },
+            {
+              name: "Tarjetas de Resultados",
+              icon: "🃏",
+            },
+            {
+              name: "Controles de Paginación",
+              icon: "↔️",
+            },
+          ],
         },
+      ],
+    },
+
+    {
+      name: "Página Explorador JSON",
+      icon: "📦",
+
+      children: [
         {
-          name: "Avatar",
-          icon: "📸",
+          name: "Explorador de Datos",
+          icon: "🗂️",
+
+          children: [
+            {
+              name: "Barra de Búsqueda",
+              icon: "🔎",
+            },
+            {
+              name: "Filtro por Categoría",
+              icon: "🏷️",
+            },
+            {
+              name: "Filtro por Estado",
+              icon: "⚙️",
+            },
+            {
+              name: "Tarjetas de Registros",
+              icon: "🃏",
+            },
+          ],
         },
       ],
     },
