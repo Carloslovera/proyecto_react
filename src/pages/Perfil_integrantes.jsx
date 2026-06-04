@@ -10,9 +10,11 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaAngular,
-  FaJs
+  FaJs,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter
 } from 'react-icons/fa'
-
 
 import {
   SiAstro,
@@ -48,200 +50,111 @@ export default function PerfilIntegrante() {
     return (
       <div>
         <h2>Perfil no encontrado</h2>
-
-        <button onClick={() => navigate('/perfil')}>
-          Volver
-        </button>
+        <button onClick={() => navigate('/')}>Volver al Dashboard</button>
       </div>
     )
   }
 
   const nextProject = () => {
     setCurrentProject((prev) =>
-      prev === integrante.projects.length - 1
-        ? 0
-        : prev + 1
+      prev === integrante.projects.length - 1 ? 0 : prev + 1
     )
   }
 
   const prevProject = () => {
     setCurrentProject((prev) =>
-      prev === 0
-        ? integrante.projects.length - 1
-        : prev - 1
+      prev === 0 ? integrante.projects.length - 1 : prev - 1
     )
   }
 
   return (
     <div className="perfil-detalle">
 
-      {/* BOTÓN VOLVER */}
       <button
-        className="btn-volver"
-        onClick={() => navigate('/perfil')}
-      >
-        ← Volver
-      </button>
+  className="btn-volver"
+  onClick={() => navigate('/')}
+>
+  ← Volver al Dashboard
+</button>
 
-      {/* HEADER */}
       <div className="perfil-header">
-
-        <img
-          src={integrante.avatar}
-          alt={integrante.nombre}
-          className="perfil-avatar"
-        />
-
+        <img src={integrante.avatar} alt={integrante.nombre} className="perfil-avatar" />
         <div className="perfil-info">
-
-          <h1>
-            {integrante.nombre}
-          </h1>
-
-          <h3>
-            {integrante.rol}
-          </h3>
-
-          <p>
-            {integrante.description}
-          </p>
-
+          <h1>{integrante.nombre}</h1>
+          <h3>{integrante.rol}</h3>
+          <p>{integrante.description}</p>
         </div>
-
       </div>
 
-      {/* HABILIDADES */}
-      <h2 className="seccion-titulo">
-        Habilidades
-      </h2>
+      <h2 className="seccion-titulo">Habilidades</h2>
 
-      {integrante.skills?.map((skill) => (
-
-        <div
-          key={skill.name}
-          className="skill"
-        >
-
+      {integrante.skills?.map((skill, idx) => (
+        <div key={skill.name} className="skill">
           <div className="skill-header">
-
-            <span className="skill-name">
-              {skill.name}
-            </span>
-
-            <span className="skill-level">
-              {skill.level}
-            </span>
-
+            <span className="skill-name">{skill.name}</span>
+            <span className="skill-level">{skill.level}%</span>
           </div>
-
-          <progress
-            value={parseInt(skill.level)}
-            max="100"
-          />
-
+          <div className="progress-bar-bg">
+            <div 
+              className="progress-bar-fill"
+              style={{ width: `${parseInt(skill.level)}%` }}
+            />
+          </div>
         </div>
-
       ))}
 
-      {/* STACK TECNOLÓGICO */}
-        <h2 className="seccion-titulo">
-        Stack Tecnológico
-        </h2>
+      <h2 className="seccion-titulo">Stack Tecnológico</h2>
 
-        <div className="tech-stack">
-
-       <div className="tech-stack">
-
+      <div className="tech-stack">
         {integrante.techStack?.map((tech) => (
-
-            <div
-            key={tech}
-            className="tech-badge"
-            >
-            <span className="tech-icon">
-                {techIcons[tech]}
-            </span>
-
+          <div key={tech} className="tech-badge">
+            <span className="tech-icon">{techIcons[tech]}</span>
             {tech}
-            </div>
-
+          </div>
         ))}
+      </div>
 
-        </div>
-
-        </div>
-
-      {/* PROYECTOS */}
-      <h2 className="seccion-titulo">
-        Proyectos
-      </h2>
+      <h2 className="seccion-titulo">Proyectos</h2>
 
       {integrante.projects?.length > 0 && (
-
         <div className="carousel">
-
-          <button
-            className="carousel-btn"
-            onClick={prevProject}
-          >
-            ◀
-          </button>
-
+          <button className="carousel-btn" onClick={prevProject}>◀</button>
           <div className="carousel-card">
-
-            <h3>
-              {integrante.projects[currentProject].title}
-            </h3>
-
-            <p>
-              {integrante.projects[currentProject].desc}
+            {integrante.projects[currentProject].image && (
+              <img 
+                src={integrante.projects[currentProject].image} 
+                alt={integrante.projects[currentProject].title}
+                className="carousel-image"
+              />
+            )}
+            <h3>{integrante.projects[currentProject].title}</h3>
+            <p>{integrante.projects[currentProject].desc}</p>
+            <p className="carousel-counter">
+              Proyecto {currentProject + 1} de {integrante.projects.length}
             </p>
-
-            <p>
-              Proyecto {currentProject + 1} de{' '}
-              {integrante.projects.length}
-            </p>
-
           </div>
-
-          <button
-            className="carousel-btn"
-            onClick={nextProject}
-          >
-            ▶
-          </button>
-
+          <button className="carousel-btn" onClick={nextProject}>▶</button>
         </div>
-
       )}
 
-      {/* REDES */}
-      <h2 className="seccion-titulo">
-        Redes Sociales
-      </h2>
+      <h2 className="seccion-titulo">Redes Sociales</h2>
 
       <div className="redes">
-
         {integrante.github && (
-          <a
-            href={integrante.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
+          <a href={integrante.github} target="_blank" rel="noreferrer">
+            <FaGithub /> GitHub
           </a>
         )}
-
         {integrante.linkedin && (
-          <a
-            href={integrante.linkedin}
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
+          <a href={integrante.linkedin} target="_blank" rel="noreferrer">
+            <FaLinkedin /> LinkedIn
           </a>
         )}
-
+        {integrante.twitter && (
+          <a href={integrante.twitter} target="_blank" rel="noreferrer">
+            <FaTwitter /> Twitter
+          </a>
+        )}
       </div>
 
     </div>

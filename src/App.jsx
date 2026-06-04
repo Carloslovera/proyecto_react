@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Dashboard from "./pages/Dashboard";
-import Perfil from "./pages/Perfil";
+// import Perfil from "./pages/Perfil";  ← ELIMINADO (ya está en Dashboard)
 import GalleryPage from "./pages/GalleryPage";
 import BitacoraPage from "./pages/BitacoraPage";
 import RenderTreePage from "./pages/RenderTreePage";
@@ -13,14 +13,16 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        {/* Dashboard ahora muestra la grilla de integrantes */}
         <Route index element={<Dashboard />} />
-        <Route path="perfil" element={<Perfil />} />
+        
+        {/* Perfil individual de cada integrante */}
         <Route path="perfil/:id" element={<PerfilIntegrante />} />
+        
+        {/* Resto de las páginas */}
         <Route path="galeria" element={<GalleryPage />} />
         <Route path="bitacora" element={<BitacoraPage />} />
         <Route path="arbol-componentes" element={<RenderTreePage />} />
-
-        {/* Mis páginas */}
         <Route path="json-explorer" element={<JsonExplorerPage />} />
         <Route path="api-externa" element={<ApiPage />} />
       </Route>
