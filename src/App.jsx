@@ -5,7 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import GalleryPage from "./pages/GalleryPage";
 import BitacoraPage from "./pages/BitacoraPage";
 import RenderTreePage from "./pages/RenderTreePage";
-import PerfilIntegrante from "./pages/Perfil_Integrantes";
+import PerfilIntegrante from "./pages/Perfil_integrantes";
 import JsonExplorerPage from "./pages/JsonExplorerPage";
 import ApiPage from "./pages/ApiPage";
 
