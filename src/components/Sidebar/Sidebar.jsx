@@ -3,7 +3,6 @@ import "./Sidebar.css";
 
 const navLinks = [
   { to: "/", label: "Dashboard", icon: "🏠" },
-  { to: "/perfil", label: "Perfil", icon: "👤" },
   { to: "/galeria", label: "Galería", icon: "🖼️" },
   { to: "/bitacora", label: "Bitácora", icon: "📋" },
   { to: "/json-explorer", label: "Explorador JSON", icon: "📄" },
