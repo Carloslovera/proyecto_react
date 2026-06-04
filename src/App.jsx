@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Dashboard from "./pages/Dashboard";
-// import Perfil from "./pages/Perfil";  ← ELIMINADO (ya está en Dashboard)
 import GalleryPage from "./pages/GalleryPage";
 import BitacoraPage from "./pages/BitacoraPage";
 import RenderTreePage from "./pages/RenderTreePage";
