@@ -1,8 +1,6 @@
-# 🚀 TP2 - React Dashboard Interactive
+# TP2 - React Dashboard Interactive
 
-> **Link del despliegue:** [https://tu-proyecto.vercel.app](https://tu-proyecto.vercel.app) ← **CAMBIAR POR TU LINK DE VERCEL**
-
----
+> **Link del despliegue:** [https://tu-proyecto.vercel.app](https://proyecto-react-rywe.vercel.app/)
 
 ## 📋 Descripción
 
@@ -180,7 +178,7 @@ src/
 ## 🔗 Enlaces
 
 - **Repositorio GitHub:** [https://github.com/Carloslovera/proyecto_react](https://github.com/Carloslovera/proyecto_react)
-- **Despliegue Vercel:** [https://tu-proyecto.vercel.app](https://tu-proyecto.vercel.app) ← **CAMBIAR POR TU LINK**
+- **Despliegue Vercel:** [https://tu-proyecto.vercel.app](https://proyecto-react-rywe.vercel.app/)
 
 ---
 
