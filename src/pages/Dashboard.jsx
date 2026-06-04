@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Dashboard.css'
 import { Link } from 'react-router-dom'
 import dataIntegrantesOriginal from '../data/dataIntegrantes.json'
@@ -10,6 +10,11 @@ function Dashboard() {
     return guardados ? JSON.parse(guardados) : dataIntegrantesOriginal
   })
   
+  const [actividades, setActividades] = useState(() => {
+    const actividadesGuardadas = localStorage.getItem('actividades')
+    return actividadesGuardadas ? JSON.parse(actividadesGuardadas) : []
+  })
+
   const [showModal, setShowModal] = useState(false)
   const [nuevoIntegrante, setNuevoIntegrante] = useState({
     id: 0,
@@ -23,9 +28,39 @@ function Dashboard() {
     social: {}
   })
 
+  // Guardar actividades en localStorage cuando cambien
+  useEffect(() => {
+    localStorage.setItem('actividades', JSON.stringify(actividades))
+  }, [actividades])
+
   const generarAvatar = (nombre) => {
     const seed = nombre.toLowerCase().replace(/\s/g, '')
     return `https://api.dicebear.com/7.x/avataaars/svg?seed=${seed}`
+  }
+
+  // Función para agregar una nueva actividad
+  const agregarActividad = (texto, tipo = 'creacion') => {
+    const nuevaActividad = {
+      id: Date.now(),
+      texto: texto,
+      timestamp: new Date(),
+      tipo: tipo // 'creacion', 'eliminacion', 'edicion'
+    }
+    setActividades(prev => [nuevaActividad, ...prev].slice(0, 20)) // Máximo 20 actividades
+  }
+
+  // Función para calcular tiempo relativo
+  const tiempoRelativo = (fecha) => {
+    const ahora = new Date()
+    const diferenciaMs = ahora - new Date(fecha)
+    const minutos = Math.floor(diferenciaMs / 60000)
+    const horas = Math.floor(diferenciaMs / 3600000)
+    const dias = Math.floor(diferenciaMs / 86400000)
+    
+    if (minutos < 1) return 'Hace unos segundos'
+    if (minutos < 60) return `Hace ${minutos} ${minutos === 1 ? 'minuto' : 'minutos'}`
+    if (horas < 24) return `Hace ${horas} ${horas === 1 ? 'hora' : 'horas'}`
+    return `Hace ${dias} ${dias === 1 ? 'día' : 'días'}`
   }
 
   const handleChange = (e) => {
@@ -71,8 +106,11 @@ function Dashboard() {
     const nuevosIntegrantes = [...integrantes, nuevo]
     setIntegrantes(nuevosIntegrantes)
     
-    // 🔥 GUARDAR EN LOCALSTORAGE
+    // GUARDAR EN LOCALSTORAGE
     localStorage.setItem('integrantes', JSON.stringify(nuevosIntegrantes))
+    
+    // AGREGAR ACTIVIDAD
+    agregarActividad(`${nuevo.nombre} se unió al equipo como ${nuevo.rol}`)
     
     setShowModal(false)
     setNuevoIntegrante({
@@ -93,8 +131,22 @@ function Dashboard() {
   const resetearDatos = () => {
     if (confirm('⚠️ ¿Seguro que quieres resetear? Se perderán los integrantes agregados.')) {
       localStorage.removeItem('integrantes')
+      localStorage.removeItem('actividades')
       setIntegrantes(dataIntegrantesOriginal)
+      setActividades([])
+      agregarActividad('Datos restaurados a la configuración original', 'sistema')
       alert('✅ Datos restaurados a los originales')
+    }
+  }
+
+  // Icono según tipo de actividad
+  const getActividadIcono = (tipo) => {
+    switch(tipo) {
+      case 'creacion': return '➕'
+      case 'eliminacion': return '🗑️'
+      case 'edicion': return '✏️'
+      case 'sistema': return '🔄'
+      default: return '●'
     }
   }
 
@@ -103,7 +155,7 @@ function Dashboard() {
       <div className="dashboard__header">
         <div>
           <h1 className="dashboard__title">Dashboard</h1>
-          <p className="dashboard__subtitle">Bienvenido de nuevo 👋</p>
+          <p className="dashboard__subtitle">Bienvenido</p>
         </div>
         <div className="dashboard__actions">
           <button className="dashboard__btn-reset" onClick={resetearDatos}>
@@ -134,7 +186,38 @@ function Dashboard() {
         ))}
       </div>
 
-      {/* Modal (igual que antes) */}
+      {/* SECCIÓN DE ACTIVIDAD RECIENTE MEJORADA */}
+      <section className="dashboard__section">
+        <h2 className="dashboard__section-title">
+          📋 Actividad Reciente
+          {actividades.length > 0 && (
+            <span className="activity__count">{actividades.length}</span>
+          )}
+        </h2>
+        <div className="dashboard__activity">
+          {actividades.length === 0 ? (
+            <div className="activity__empty">
+              <span>📭</span>
+              <p>Aún no hay actividad reciente</p>
+              <small>Agrega un nuevo integrante para ver actividad</small>
+            </div>
+          ) : (
+            actividades.map((act) => (
+              <div key={act.id} className="activity__item">
+                <span className={`activity__dot activity__dot--${act.tipo}`}>
+                  {getActividadIcono(act.tipo)}
+                </span>
+                <div>
+                  <p className="activity__text">{act.texto}</p>
+                  <p className="activity__time">{tiempoRelativo(act.timestamp)}</p>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </section>
+
+      {/* Modal */}
       {showModal && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -169,21 +252,6 @@ function Dashboard() {
           </div>
         </div>
       )}
-
-      <section className="dashboard__section">
-        <h2 className="dashboard__section-title">Actividad Reciente</h2>
-        <div className="dashboard__activity">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="activity__item">
-              <span className="activity__dot" />
-              <div>
-                <p className="activity__text">Tarea {i} completada exitosamente</p>
-                <p className="activity__time">Hace {i * 10} minutos</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   )
 }

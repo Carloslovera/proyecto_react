@@ -8,7 +8,6 @@ const navLinks = [
   { to: "/json-explorer", label: "Explorador JSON", icon: "📄" },
   { to: "/api-externa", label: "API Externa", icon: "🌐" },
   { to: "/arbol-componentes", label: "Árbol de Componentes", icon: "🌳" },
-  { to: "/configuracion", label: "Configuración", icon: "⚙️" },
 ];
 
 function Sidebar() {
