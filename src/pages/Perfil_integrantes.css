@@ -4,35 +4,60 @@
   padding: 2rem;
   background-color: #ffffff;
   box-sizing: border-box;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* BOTÓN VOLVER */
-
 .btn-volver {
   border: none;
-  background-color: #ff2d55;
+  background: linear-gradient(135deg, #ff2d55, #ff7b00);
   color: white;
-  padding: 0.8rem 1.2rem;
-  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
   cursor: pointer;
   font-weight: 600;
   font-family: "Inter", sans-serif;
   margin-bottom: 2rem;
-  transition: 0.2s;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btn-volver:hover {
-  transform: translateY(-2px);
-  background-color: #ff7b00;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 45, 85, 0.3);
 }
 
 /* HEADER */
-
 .perfil-header {
   display: flex;
   align-items: center;
   gap: 2rem;
   margin-bottom: 3rem;
+  animation: slideInLeft 0.6s ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .perfil-avatar {
@@ -40,7 +65,13 @@
   height: 180px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #ff2d55;
+  border: 4px solid #ff2d55;
+  box-shadow: 0 10px 25px rgba(255, 45, 85, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.perfil-avatar:hover {
+  transform: scale(1.02);
 }
 
 .perfil-info h1 {
@@ -69,7 +100,6 @@
 }
 
 /* TITULOS DE SECCIÓN */
-
 .seccion-titulo {
   color: #1f2937;
   font-size: 1.5rem;
@@ -77,7 +107,7 @@
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
   margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
@@ -86,152 +116,346 @@
   display: block;
   width: 60px;
   height: 4px;
-  background-color: #ff2d55;
+  background: linear-gradient(90deg, #ff2d55, #ff7b00);
   border-radius: 999px;
   margin-top: 0.5rem;
 }
 
-/* HABILIDADES */
-
+/* ============================================ */
+/* HABILIDADES - BARRAS DE PROGRESO ANIMADAS    */
+/* ============================================ */
 .skill {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .skill-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .skill-name {
   color: #1f2937;
   font-weight: 600;
   font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
 }
 
 .skill-level {
-  color: #666666;
+  color: #ff2d55;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
 }
 
-.skill progress {
-  width: 100%;
+/* Contenedor de la barra de progreso */
+.progress-bar-bg {
+  background-color: #e5e7eb;
+  border-radius: 10px;
   height: 10px;
+  overflow: hidden;
 }
 
-/* STACK TECNOLÓGICO */
+/* Barra de progreso animada */
+.progress-bar-fill {
+  background: linear-gradient(90deg, #ff2d55, #ff7b00);
+  height: 100%;
+  border-radius: 10px;
+  width: 0%;
+  animation: fillProgress 1.5s ease-out forwards;
+  position: relative;
+}
+
+/* Efecto de brillo en la barra */
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--final-width, 0%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ============================================ */
+/* STACK TECNOLÓGICO - CON EFECTOS HOVER       */
+/* ============================================ */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
 .tech-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border: 2px solid #ff2d55;
-  border-radius: 999px;
-  background: #fff;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 40px;
   color: #1f2937;
   font-weight: 600;
   font-family: "Inter", sans-serif;
-  width: fit-content;
-  transition: 0.2s ease;
+  font-size: 0.85rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
 }
 
 .tech-badge:hover {
-  background: #ff2d55;
+  background: linear-gradient(135deg, #ff2d55, #ff7b00);
+  border-color: transparent;
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 45, 85, 0.3);
 }
 
 .tech-icon {
-  font-size: 18px;
-  color: #ff7b00;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
-/* PROYECTOS */
+.tech-badge:hover .tech-icon {
+  transform: rotate(8deg) scale(1.1);
+  color: white;
+}
 
+/* ============================================ */
+/* CARRUSEL DE PROYECTOS                        */
+/* ============================================ */
 .carousel {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin: 1.5rem 0;
 }
 
 .carousel-card {
   flex: 1;
   background: white;
-  border-radius: 24px; /* era 18px */
+  border-radius: 24px;
   padding: 1.5rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.078); /* unificado */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.carousel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(255, 45, 85, 0.15);
+}
+
+/* Imagen del proyecto en el carrusel */
+.carousel-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1rem;
 }
 
 .carousel-card h3 {
-  color: #ff2d55; /* era #1f2937, ahora igual que h2 de cards */
+  color: #ff2d55;
   font-family: "Inter", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
+  font-size: 1.2rem;
 }
 
 .carousel-card p {
   color: #4b5563;
-  line-height: 1.8;
+  line-height: 1.6;
+  font-size: 0.9rem;
 }
 
-.carousel button {
+.carousel-counter {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.carousel-btn {
   border: none;
-  background-color: #ff2d55;
+  background: linear-gradient(135deg, #ff2d55, #ff7b00);
   color: white;
   width: 45px;
   height: 45px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 1rem;
-  transition: 0.2s;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel button:hover {
-  background-color: #ff7b00;
+.carousel-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 45, 85, 0.4);
 }
 
-/* REDES */
-
+/* ============================================ */
+/* REDES SOCIALES - HOVER AVANZADO              */
+/* ============================================ */
 .redes {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
   margin-top: 1rem;
 }
 
 .redes a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   text-decoration: none;
-  background-color: #ff2d55;
-  color: white;
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 40px;
   font-weight: 600;
   font-family: "Inter", sans-serif;
-  transition: 0.2s;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.redes a:hover {
-  background-color: #ff7b00;
+/* GitHub */
+.redes a[href*="github"] {
+  background-color: #24292e;
+  color: white;
 }
 
-/* RESPONSIVE */
+.redes a[href*="github"]:hover {
+  background-color: #1a1e22;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(36, 41, 46, 0.4);
+}
 
+/* LinkedIn */
+.redes a[href*="linkedin"] {
+  background-color: #0077b5;
+  color: white;
+}
+
+.redes a[href*="linkedin"]:hover {
+  background-color: #005e8c;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+}
+
+/* Twitter */
+.redes a[href*="twitter"] {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.redes a[href*="twitter"]:hover {
+  background-color: #0d8bd9;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(29, 161, 242, 0.4);
+}
+
+/* Instagram */
+.redes a[href*="instagram"] {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: white;
+}
+
+.redes a[href*="instagram"]:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(131, 58, 180, 0.4);
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN                            */
+/* ============================================ */
 @media (max-width: 768px) {
+  .perfil-detalle {
+    padding: 1rem;
+  }
+
   .perfil-header {
     flex-direction: column;
     text-align: center;
   }
 
   .perfil-avatar {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 
   .perfil-info h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .carousel {
     flex-direction: column;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .tech-stack {
+    justify-content: center;
+  }
+
+  .redes {
+    justify-content: center;
+  }
+
+  .redes a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ============================================ */
+/* ANIMACIONES ADICIONALES                      */
+/* ============================================ */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Efecto de carga para las tarjetas */
+.carousel-card {
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

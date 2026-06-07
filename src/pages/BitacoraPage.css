@@ -53,3 +53,97 @@
     margin-bottom: 1rem;
     text-align: justify;
 }
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.role-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #ff2d55;
+  transition: transform 0.2s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.role-card h4 {
+  color: #ff2d55;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-family: "Inter", sans-serif;
+}
+
+.role-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.role-card li {
+  margin: 0.5rem 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.workflow-section h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #1f2937;
+  font-family: "Inter", sans-serif;
+}
+
+/* ============================================ */
+/* METODOLOGÍA DE TRABAJO - ESTILOS EXCLUSIVOS  */
+/* ============================================ */
+
+.workflow-section h3 {
+  color: #ff2d55;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.workflow-section ul {
+  margin: 1rem 0 1.5rem 0;
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+.workflow-section li {
+  color: #4b5563;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.workflow-section li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #ff2d55;
+  font-size: 0.9rem;
+}
+
+.workflow-section li strong {
+  color: #ff2d55;
+  font-weight: 700;
+  background: rgba(255, 45, 85, 0.08);
+  padding: 0.1rem 0.3rem;
+  border-radius: 6px;
+}

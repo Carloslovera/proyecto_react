@@ -15,33 +15,75 @@ export default function BitacoraPage() {
 
       <Timeline />
 
-      <section className="workflow-section">
-        <h2>Roles y Flujo de Trabajo</h2>
-        <p>
-          Durante el desarrollo del proyecto se utilizó Trello como herramienta
-          principal para organizar las tareas del equipo y realizar un
-          seguimiento del avance de cada funcionalidad.
-        </p>
+<section className="workflow-section">
+  <h2>Roles y Flujo de Trabajo</h2>
+  
+  <p>
+    Durante el desarrollo del proyecto se utilizó <strong>Trello</strong> como herramienta
+    principal para organizar las tareas del equipo y realizar un seguimiento del avance de cada funcionalidad.
+  </p>
 
-        <p>
-          Para el control de versiones se trabajó con Git y GitHub siguiendo una
-          estructura inspirada en GitFlow. Cada integrante contó con su propia
-          rama de desarrollo para implementar las funcionalidades asignadas,
-          mientras que la rama principal se mantuvo estable y se utilizó para
-          integrar los cambios una vez que estaban listos para ser revisados y
-          fusionados.
-        </p>
+  <p>
+    Para el control de versiones se trabajó con <strong>Git y GitHub</strong> siguiendo una
+    estructura inspirada en <strong>GitFlow</strong>. Cada integrante contó con su propia
+    rama de desarrollo para implementar las funcionalidades asignadas,
+    mientras que la rama principal se mantuvo estable y se utilizó para
+    integrar los cambios una vez que estaban listos para ser revisados y
+    fusionados.
+  </p>
 
-        <p>
-          Se asignaron tareas específicas a cada miembro del equipo, donde cada
-          uno tenía que realizar un número de tareas definidas entre todos. Esta
-          división de responsabilidades permitió un enfoque más organizado y
-          eficiente en el desarrollo. Al mismo tiempo, aseguró que cada
-          integrante tuviera un rol claro y contribuyera de manera significativa
-          al proyecto, fomentando la colaboración y el aprendizaje mutuo a lo
-          largo del proceso.
-        </p>
-      </section>
+  <h3>📋 Distribución de Tareas por Integrante</h3>
+  
+  <div className="roles-grid">
+    <div className="role-card">
+      <h4>👨‍💻 Carlos Lovera</h4>
+      <ul>
+        <li>Configuración inicial del proyecto (Vite + React Router)</li>
+        <li>Componente de API externa con paginación</li>
+        <li>Lógica de localStorage para nuevos integrantes</li>
+        <li>Sidebar y estructura de Layout</li>
+      </ul>
+    </div>
+
+    <div className="role-card">
+      <h4>👩‍💻 Karina Ajhuacho</h4>
+      <ul>
+        <li>Dashboard con grilla de integrantes y animaciones</li>
+        <li>Galería de imágenes con Lightbox</li>
+        <li>Estilos CSS y diseño responsive</li>
+        <li>Componente de actividad reciente</li>
+      </ul>
+    </div>
+
+    <div className="role-card">
+      <h4>👨‍💻 Maxi Ratti</h4>
+      <ul>
+        <li>Perfil individual (barras de progreso, carrusel, tech stack)</li>
+        <li>Explorador JSON con buscador y filtros (20 objetos)</li>
+        <li>Datos de integrantes y habilidades</li>
+        <li>Integración de React Icons</li>
+      </ul>
+    </div>
+
+    <div className="role-card">
+      <h4>👩‍💻 Ivanna Vrodt</h4>
+      <ul>
+        <li>Bitácora de proyecto (timeline y documentación)</li>
+        <li>Árbol de renderizado de componentes</li>
+        <li>README.md completo y documentación de IA</li>
+        <li>Testing y revisión de código</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>📌 Metodología de Trabajo</h3>
+  <ul>
+    <li><strong>Daily meetings:</strong> Reuniones breves al inicio de cada sesión para coordinar tareas.</li>
+    <li><strong>Ramas por funcionalidad:</strong> Cada tarea importante tenía su propia rama (ej: `feature/json-explorer`).</li>
+    <li><strong>Pull requests:</strong> Cada integración requería revisión de al menos un compañero.</li>
+    <li><strong>Trello:</strong> Tablero con columnas: "Pendiente", "En curso", "En revisión", "Completado".</li>
+  </ul>
+</section>
 
       <section className="migration-section">
         <h2>Justificación de la Migración a React</h2>

@@ -1,4 +1,4 @@
-import Gallery from "../components/Gallery/Gallery";
+import Gallery from "../components/gallery/Gallery.jsx";
 import "./GalleryPage.css";
 
 export default function GalleryPage() {
