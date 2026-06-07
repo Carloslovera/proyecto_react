@@ -46,36 +46,36 @@ Este proyecto es una aplicación web desarrollada con **React** que evoluciona e
 ---
 
 ## 📁 Estructura de Archivos
+
+```text
 src/
 ├── assets/
-│ └── gallery/ # Imágenes de la galería
+│   └── gallery/            # Imagenes de la galeria
 ├── components/
-│ └── gallery/
-│ ├── Gallery.jsx
-│ ├── Gallery.css
-│ └── Lightbox.jsx
+│   └── gallery/
+│       ├── Gallery.jsx
+│       ├── Gallery.css
+│       └── Lightbox.jsx
 ├── data/
-│ ├── dataIntegrantes.json # Datos de los integrantes
-│ ├── empleados.json # 20 objetos para JSON Explorer
-│ ├── galleryData.js # Imágenes de galería
-│ ├── renderTreeData.js # Árbol de componentes
-│ └── timelineData.js # Bitácora del proyecto
+│   ├── dataIntegrantes.json # Datos de los integrantes
+│   ├── empleados.json       # 20 objetos para JSON Explorer
+│   ├── galleryData.js       # Imagenes de galeria
+│   ├── renderTreeData.js    # Árbol de componentes
+│   └── timelineData.js      # Bitácora del proyecto
 ├── layouts/
-│ └── Layout.jsx # Layout con Sidebar
+│   └── Layout.jsx           # Layout con Sidebar
 ├── pages/
-│ ├── Dashboard.jsx # Home con grilla
-│ ├── PerfilIntegrante.jsx # Perfil individual
-│ ├── GalleryPage.jsx # Galería con Lightbox
-│ ├── JsonExplorerPage.jsx # JSON con buscador
-│ ├── ApiPage.jsx # API externa
-│ ├── BitacoraPage.jsx # Bitácora
-│ └── RenderTreePage.jsx # Árbol de componentes
+│   ├── Dashboard.jsx        # Home con grilla
+│   ├── PerfilIntegrante.jsx # Perfil individual
+│   ├── GalleryPage.jsx      # Galería con Lightbox
+│   ├── JsonExplorerPage.jsx # JSON con buscador
+│   ├── ApiPage.jsx          # API externa
+│   ├── BitacoraPage.jsx     # Bitácora
+│   └── RenderTreePage.jsx   # Árbol de componentes
 ├── App.jsx
 ├── main.jsx
 └── index.css
-
-
----
+```
 
 ## 🎨 Guía de Estilos
 
