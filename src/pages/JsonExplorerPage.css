@@ -40,6 +40,14 @@
   margin: 5px 0;
 }
 
+.empleado-foto {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
 @media (max-width: 768px) {
   .empleados-grid {
     grid-template-columns: 1fr;

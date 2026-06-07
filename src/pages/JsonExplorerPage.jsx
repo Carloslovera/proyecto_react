@@ -54,9 +54,15 @@ function JsonExplorerPage() {
       <div className="empleados-grid">
         {empleadosFiltrados.map((empleado) => (
           <div key={empleado.id} className="empleado-card">
-            <h3>{empleado.nombre}</h3>
-            <p>{empleado.categoria}</p>
-            <p>{empleado.estado}</p>
+              <img
+                src={empleado.foto}
+                alt={empleado.nombre}
+                className="empleado-foto"
+              />
+
+              <h3>{empleado.nombre}</h3>
+              <p>Categoría: {empleado.categoria}</p>
+              <p>Estado: {empleado.estado}</p>
           </div>
         ))}
       </div>
