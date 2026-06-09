@@ -149,6 +149,31 @@ src/
 | Reutilización | Código duplicado | Componentes reutilizables |
 
 ---
+### Imagenes comparativas TP1 vs TP2 
+
+**Arquitectura**
+
+La organizacion del proyecto en el TP1 esta basada en una estructura simple y con archivos independientes. Luego migro a una estructura modular con componentes reutilizables.
+
+![De archivos sin estructura a modularizacion de componentes](image.png)
+
+**Interfaz**
+
+Evolución de una landing page tradicional con tema oscuro hacia un dashboard interactivo con diseño claro, mejor organización visual y una experiencia de usuario más moderna y profesional.
+
+![Interfaz TP1](image-2.png)
+
+![Interfaz TP2](image-1.png)
+
+**Navegacion**
+
+En el TP1, la navegación se realizaba mediante enlaces entre múltiples páginas HTML, lo que implicaba recargas completas del sitio. En el TP2, gracias a React Router, se implementó una navegación dinámica tipo SPA (Single Page Application), permitiendo transiciones más fluidas, una mejor experiencia de usuario y una mayor integración entre las distintas secciones de la aplicación.
+
+![Navegacion TP1](image-3.png)
+
+![Navegacion TP2](image-4.png)
+
+---
 
 ## 🤖 Uso de Inteligencia Artificial
 
